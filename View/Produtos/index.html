@@ -1,12 +1,12 @@
 <h2>Lista de produtos</h2>
 <ul>
 	<li data-ng-repeat="produto in produtos">
-		{{produto.name}}  -  {{produto.preco}} | <a href="" data-ng-click="carrgaProduto(produto)">E</a> | <a href="" data-ng-click="excluir(produto)">X</a> 
+		{{produto.name}}  -  {{produto.preco}} | <a href="" data-ng-click="carrgaProduto(produto)">E</a> | <a href="" data-ng-click="excluir(produto)">X</a>
 	</li>
 </ul>
 
 <form data-ng-submit="addProduto()">
-	<input type="text" data-ng-model="nome" placeholder="Digite um produto">
-	<input type="text" data-ng-model="valor" placeholder="Digite o valor deste produto">
+	<input type="text" data-ng-model="form.nome" placeholder="Digite um produto">
+	<input type="text" data-ng-model="form.preco" placeholder="Digite o valor deste produto">
 	<input type="submit" value="Adicionar">
 </form>

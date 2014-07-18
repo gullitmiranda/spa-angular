@@ -1,6 +1,11 @@
 app.controller('ProdutosController', ['$scope', function ($scope) {
     $scope.titlePage = 'Cadastro de produtos';
 
+    $scope.form = {
+    		name: ""
+    	, preco: ""
+    }
+
     var init = function () {
 		$scope.produtos = [
 						    {name:'Arroz', preco:'10.20'},
@@ -12,11 +17,9 @@ app.controller('ProdutosController', ['$scope', function ($scope) {
 
 	$scope.addProduto = function(produto){
 		console.log($scope.produtos.indexOf(produto));
-		if ($scope.produtos.indexOf(produto) != -1) {
-			$scope.editar(produto);
-		}else{
-			$scope.salvar();
-		};
+
+		produto_index = $scope.produtos.indexOf(produto) || $scope.produtos
+		$scope.produtos[produto_index] = $scope.form
 	};
 
 	$scope.excluir = function (produto) {
@@ -24,20 +27,9 @@ app.controller('ProdutosController', ['$scope', function ($scope) {
 		limpartela();
 	};
 
-	$scope.editar = function (produto) {
-		$scope.produtos.$put(produto);
-		console.log(produto, 'editar');
-	};
-
-	$scope.salvar = function(){
-		$scope.produtos.push({name: $scope.nome, preco: $scope.valor});
-		limpartela();
-		console.log(produto, 'salvar');
-	};
-
 	$scope.carrgaProduto = function(produto){
-		$scope.nome = produto.name;
-		$scope.valor = produto.preco;
+		$scope.form.nome = produto.name;
+		$scope.form.valor = produto.preco;
 	};
 
 	var limpartela =function(){
