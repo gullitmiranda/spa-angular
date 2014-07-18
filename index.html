@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-ng-app="app" data-ng-controller="LayoutController" lang="pt-Br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPA - AngularJs - DiegoEvangelista">
+    <meta charset="UTF-8">
+    <title>{{titlePage}}</title>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-cookies.js"></script>
+    <script src="App_Start/app.js"></script>
+    <script src="Controller/LayoutController.js"></script>
+
+    <script src="Controller/Home/HomeController.js"></script>
+    <script src="Controller/Produtos/ProdutosController.js"></script>
+
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#/">Home</a>
+        </li>
+        <li>
+            <a href="#/Produto">Produto</a>
+        </li>
+    </ul>
+    <div class="" data-ng-view></div>
+</body>
+</html>
